@@ -1,0 +1,27 @@
+[package]
+name = "prisma-query-engine"
+version = "0.1.0"
+authors = ["Alaa Rihan <alaa.addeen@gmail.com>"]
+edition = "2018"
+
+[lib]
+crate-type = ["lib"]
+
+[features]
+vendored-openssl = ["sql-connector/vendored-openssl"]
+
+[dependencies]
+query-core = { git = "https://github.com/prisma/prisma-engines", branch = "master" }
+request-handlers = { git = "https://github.com/prisma/prisma-engines", branch = "master" }
+query-connector = { git = "https://github.com/prisma/prisma-engines", branch = "master" }
+user-facing-errors = {git = "https://github.com/prisma/prisma-engines", branch = "master"}
+prisma-models = { git = "https://github.com/prisma/prisma-engines", branch = "master" }
+datamodel = { git = "https://github.com/prisma/prisma-engines", branch = "master" }
+datamodel-connector = { git = "https://github.com/prisma/prisma-engines", branch = "master"  }
+sql-connector = { git = "https://github.com/prisma/prisma-engines", branch = "master", package = "sql-query-connector" }
+thiserror = "1"
+connection-string = "0.1"
+url = "2"
+serde_json = { version = "1", features = ["preserve_order", "float_roundtrip"] }
+serde = "1"
+tokio = { version = "1", features = ["sync"] }
