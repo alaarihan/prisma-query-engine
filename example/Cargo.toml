@@ -1,0 +1,12 @@
+[package]
+name = "prisma-query-engine-example"
+version = "0.1.0"
+authors = ["Alaa Rihan <alaa.addeen@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+query-engine = { path = "../", package = "prisma-query-engine" }
+request-handlers = { git = "https://github.com/prisma/prisma-engines", branch = "master" }
+tokio = { version = "1", features = ["sync"] }
